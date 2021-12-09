@@ -1,0 +1,126 @@
+// DIGITAL ALBUM FORM
+.container
+  .row.d-flex.justify-content-center.align-items-center
+    .col
+      .row.bg-dark
+        .col-lg-5.col-md-6.px-0
+          img.img-fluid.d-none.d-md-block.w-100.h-100(src='/public/images/background/formImg1.jpg', alt='Responsive image')
+        .col-lg-7.col-md-6.col-sm-12.px-0
+          dir.container
+            // SIGN UP
+            .row.d-flex.justify-content-center
+              .col.text-white
+                // Select Tab
+                .row
+                  nav.nav.btn-group.rounded
+                    button#tab-personalInfos.btn.btn-outline-primary.active(data-bs-toggle='tab', type='button') Dados Pessoais
+                    button#tab-authorization.btn.btn-outline-primary(data-bs-toggle='tab', type='button') Autoriza&ccedil;&atilde;o
+                // Form
+                .row
+                  form#dataForm(name='dataForm', action='/DigitalAlbum/Form/createAlbum', method='POST', onsubmit='return validationForm()', novalidate='')
+                    #div-personalInfos.text-uppercase.fw-bold
+                      // Field
+                      .row
+                        .col
+                          .form-group
+                            label(for='name') Nome Completo
+                            input#name.form-control(type='text', name='name', maxlength='40', placeholder='example name', required='required')
+                      .row
+                        .col
+                          .form-group
+                            label(for='telephone') Telefone/Whatsapp
+                            input#phone_whatsapp.form-control(type='tel', name='phone_whatsapp', placeholder='988884444')
+                        .col
+                          .form-group
+                            label(for='birthday') Data de Nascimento
+                            input#birthday.form-control(type='date', name='birthday')
+                      .row
+                        .col
+                          .form-group
+                            label(for='email') Email
+                            input#email.form-control(type='email', name='email', placeholder='example@example.com', required='required')
+                      .row
+                        .col-3
+                          .form-group
+                            label(for='state') Estado
+                            select#state.form-select.form-select-sm(name='state', aria-label='readonly')
+                              option(selected='') MS
+                        .col-9
+                          .form-group
+                            label(for='city') Cidade
+                            select#city.form-select.form-select-sm(name='city')
+                              option(selected='') Campo Grande
+                              option(selected='') Aquidauana
+                              option(selected='') Tr&ecirc;s Lagoas
+                              option(selected='') Jardim
+                              option(selected='') Nova Andradina
+                      // Whether Underage
+                      .row
+                        #div-responsible-name.col
+                          .form-group
+                            label(for='nome-reponsavel') Nome Respons&aacute;vel
+                            input#responsable_name.form-control(type='text', name='responsable_name')
+                        #div-responsible-cpf.col
+                          .form-group
+                            label(for='cpf-responsavel') Cpf Respons&aacute;vel
+                            input#responsable_cpf.form-control(type='number', name='responsable_cpf', placeholder='01234567891')
+                        #div-cpf.col
+                          .form-group
+                            label(for='cpf') Cpf
+                            input#cpf.form-control(type='number', name='cpf', placeholder='01234567891', required='required')
+                      // Next Button
+                      .row.py-1
+                        .col.text-center
+                          input#btnNext.btn.btn-primary.btn-lg(type='button', name='sendRegister', value='PROXIMO')
+                    // Authorization
+                    #div-authorization
+                      .row
+                        .col
+                          .form-group
+                            label(for='objetivos') Objetivos
+                            textarea#goals.form-control(readonly='', type='text')
+                              | O projeto tem como objetivo visibilizar a beleza a cultura e a ancestralidade negra existentes no Mato Grosso do Sul, historicamente apagados e fora dos padr&otilde;es est&eacute;ticos euroc&ecirc;ntricos. Oportunizar&aacute; assim, as discuss&otilde;es &eacute;tnico-raciais capazes de qualificar e encorajar as professoras e professores a trabalharem com a problem&aacute;tica da popula&ccedil;&atilde;o negra, em sala de aula, na tentativa de diminuir o arranjo da desigualdade existente no pa&iacute;s. Para isso, a partir das fotografias selecionadas para a mostra fotogr&aacute;fica, ir&aacute; se elaborar um &aacute;lbum de fotografias que ao ser finalizado, ser&aacute; direcionado para escolas p&uacute;blicas, com a inten&ccedil;&atilde;o de contribuir com o debate da Lei 10.639/03 que determina o ensino de Hist&oacute;ria e Cultura Afro-brasileira nas escolas.
+                      .row
+                        .col
+                          .form-group
+                            label(for='regras') Regras
+                            textarea#rules.form-control(readonly='', type='text')
+                              | &#x1F5A4; Cada pessoa poder&aacute; participar com uma fotografia
+                              | &#x1F5A4; A fotografia deve ser no formato digital JPG/JPEG
+                              | &#x1F5A4; A fotografia poder&aacute; ser colorida ou preta e branco
+                              | &#x1F5A4; A t&eacute;cnica para cria&ccedil;&atilde;o &eacute; livre mas precisa seguir o tema Beleza Negra Resiste
+                              | &#x1F5A4; Cada pessoa s&oacute; poder&aacute; ser premiada uma &uacute;nica vez
+                              | &#x1F5A4; As fotografias ser&atilde;o selecionadas por um j&uacute;ri composto de pessoas pretas, que julgar&aacute; a beleza negra a partir dos elementos que permitir&atilde;o evidenciar as conex&otilde;es com as ra&iacute;zes negras, com a ancestralidade negra, com a di&aacute;spora negra, com as pequenas &Aacute;fricas que existem em cada pessoa negra que vive em Mato Grosso do Sul
+                              | &#x1F5A4; Toda fotografia deve ser encaminhada com a autoriza&ccedil;&atilde;o de uso de imagem. A UFMS e o IFMS reservam para si, desde j&aacute;, o direito incontest&aacute;vel de reproduzir as fotografias inscritas em seu material institucional a qualquer momento e por tempo indeterminado, dando os devidos cr&eacute;ditos ao fot&oacute;grafo.
+                      .row
+                        .col
+                          .form-group
+                            label(for='titulo-foto') T&iacute;tulo da Foto
+                            input#photo_title.form-control(type='text', name='photo_title')
+                        .col
+                          .form-group
+                            label(for='nome_fotografa') Nome da/o Fot&oacute;grafa/o
+                            input#photographer_name.form-control(type='text', name='photographer_name')
+                      .row
+                        .col
+                          .form-group
+                            label(for='foto') Foto
+                            input#photo_name.form-control(type='file', name='photo_name')
+                      .row
+                        .col
+                          .form-group
+                            input#authorization.form-check-input(type='checkbox')
+                            label.form-check-label(for='authorization')
+                              | Li o termo e autorizo o uso de minha imagem
+                        .col
+                          .form-group
+                            textarea#goals.form-control.lead(readonly='', type='text', style='height: 100px')
+                              | Autorizo a Universidade Federal do Mato Grosso do Sul e o Instituto Federal do Mato Grosso do Sul, bem como a/o fot&oacute;grafa/o a utilizarem a minha imagem para fins de participa&ccedil;&atilde;o na mostra fotogr&aacute;fica &quot;Beleza Negra Resiste&quot;. Poder&atilde;o utiliz&aacute;-la na divulga&ccedil;&atilde;o de materiais impressos, audiovisuais e eletr&ocirc;nicos, sem fins lucrativos e tamb&eacute;m poder&aacute; ser utilizada por tempo indeterminado. Fica assim autorizada, de livre e espont&acirc;nea vontade, para os mesmos fins a cess&atilde;o de direitos de veicula&ccedil;&atilde;o, n&atilde;o recebendo para tanto qualquer tipo de remunera&ccedil;&atilde;o.
+                              | Por meio desta autoriza&ccedil;&atilde;o, eu libero a UFMS e o IFMS, acima citados, seus representantes legais ou fornecedores, de futuros processos e queixas por viola&ccedil;&atilde;o de privacidade ou de direito de propriedade que eu poderia ter em rela&ccedil;&atilde;o a tal produ&ccedil;&atilde;o.
+                              | Ao marcar o aceite da leitura do termo e autoriza&ccedil;&atilde;o da imagem, concordo com as regras e autoriza&ccedil;&atilde;o dispostas nesta p&aacute;gina.
+                      .row
+                        .col.text-center
+                          button.btn.btn-primary.btn-lg(type='submit') Enviar
+form#fileForm(action='/uploadPhoto', method='POST', enctype='multipart/form-data', style='visibility: hidden;')
+  input(type='submit')
+script(src='/public/js/digitalAlbumForm.js')

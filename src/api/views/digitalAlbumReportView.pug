@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='/public/css/background.css')
+        link(rel='stylesheet', href='/bscss/bootstrap.min.css')
+        script(src='/bsjs/bootstrap.min.js')
+        script(src='/popperjs/popper.min.js')
+        script(src='/jquery/jquery.min.js')
+        title Digital Album Report
+    body
+        include components/navbar
+        .container.py-5.mt-5
+            .text-white.display-5 Menu de Ferramentas
+            #reportFunctionsMenu.row.p-3.bg-dark.rounded-3
+                #optionsMenu.row
+                    .col
+                        .btn-group.d-flex
+                            #searchBtn.btn.btn-danger Pesquisar
+                            #orderbyBtn.btn.btn-danger Organizar
+                #searchCol.col(style='display: none;')
+                    h3.text-white.fs-2 PESQUISAR: 
+                    input#inputToSearch.form-control(type="text")
+                    a#searchByNameButton.btn.btn-danger.m-2 NOME
+                    a#searchByCityButton.btn.btn-danger.m-2 CIDADE
+                #orderbyCol.col(style='display: none;')
+                    h3.text-white.fs-2 ORGANIZAR POR: 
+                        a#orderByNameButton.btn.btn-danger.m-2 NOME
+                        a#orderByCityButton.btn.btn-danger.m-2 CIDADE
+                        a#orderByBirthdayButton.btn.btn-danger.m-2 DATA DE NASCIMENTO
+        #reportContent
+            script(src='/public/js/albumReport.js')
+        include components/popup
+        include components/footer

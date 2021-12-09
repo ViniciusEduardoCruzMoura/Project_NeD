@@ -1,0 +1,19 @@
+// SIGN IN
+.container
+    .row.d-flex.justify-content-center
+        .col-auto.bg-dark.border.border-dark.text-white
+            h1.text-center.px-0.py-3.mx-0.my-0.text-uppercase.fw-bold admin
+            // Field
+            .row.text-uppercase.fw-bold
+                .col
+                    form
+                        .form-group
+                            label(for='email') Email
+                            input#email.form-control(type='email', name='email', maxlength='40', placeholder='silva@gmail.com', required='required')
+                            label(for='password') Senha
+                            input#password.form-control(type='password', name='password', placeholder='Ex&mp10', required='required')
+            // Button
+            .row.p-1
+                .col.text-center
+                    a#signInSubmitButton.btn.btn-danger.btn-lg(href='#') ENTRAR
+script(src='/public/js/signIn.js')

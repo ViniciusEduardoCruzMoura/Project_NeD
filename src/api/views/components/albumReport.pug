@@ -1,0 +1,61 @@
+.container
+    .row
+        .col-12
+            .row.p-3.my-3
+                each album in everyAlbum
+                    .col-sm-12.col-md-6.col-lg-4.col-xl-3
+                        .card.mb-3.text-white.bg-dark
+                            img.img-fluid.card-img-top(src='/uploads/' + `${album.photo_name}`)
+                            .card-body.p-0
+                                h2.card-title.font-weight-bold.text-center #{album.name}
+                                table.table.table-dark.table-striped.card-text
+                                    tr
+                                        th Attribute
+                                        th Characteristic
+                                    tr                        
+                                        th id
+                                        td #{album.id}
+                                    tr
+                                        th Name
+                                        td #{album.name}
+                                    tr                        
+                                        th Cpf
+                                        td #{album.cpf}
+                                    tr                        
+                                        th Phone
+                                        td #{album.phone_whatsapp}
+                                    tr                        
+                                        th E-mail
+                                        td #{album.email}
+                                    tr                        
+                                        th State
+                                        td #{album.state}
+                                    tr                        
+                                        th City
+                                        td #{album.city}
+                                    tr
+                                        -var date = new Date(`${album.birthday}`);
+                                        -var dd = String(date.getDate()).padStart(2, '0');
+                                        -var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+                                        -var yyyy = date.getFullYear();
+                                        -date = mm + '/' + dd + '/' + yyyy;                        
+                                        th Birthday
+                                        td #{date}
+                                    tr                        
+                                        th Photo Title
+                                        td #{album.photo_title}
+                                    tr                        
+                                        th Photographer Name
+                                        td #{album.photographer_name}
+                                    tr                        
+                                        th Photo Name
+                                        td #{album.photo_name}
+                                    tr                        
+                                        th Responsable Name
+                                        td #{album.responsable_name}
+                                    tr                        
+                                        th Responsable Cpf
+                                        td #{album.responsable_cpf}
+                                    tr                        
+                                        th Authorization Date
+                                        td #{album.authorization_date}

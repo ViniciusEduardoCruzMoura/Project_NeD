@@ -1,0 +1,41 @@
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/public/css/background.css')
+    link(rel='stylesheet', href='/bscss/bootstrap.min.css')
+    script(src='/bsjs/bootstrap.min.js')
+    script(src='/popperjs/popper.min.js')
+    script(src='/jquery/jquery.min.js')
+    title Digital Album Home View
+  body(style="background: url('/public/images/background/background.png') no-repeat center center/cover fixed;")
+    include components/navbar
+    // MAIN HOME
+    .container-fluid(style="background: url('/public/images/background/blackPersons.png') no-repeat center center/cover;")
+      
+      // MAIN TEXT
+      .container-fluid.w-100.h-100.d-flex.align-items-center.justify-content-center
+        .row.text-center
+          .col
+            .row
+              .col
+                h1.display-4.text-white Negritude em Debate
+                  img.img-fluid.rounded-pill(src='/public/images/logo/logo_NeD1.png', style='background-color:rgba(255, 130, 0, 0.1);')
+            .row
+              .col
+                a.btn.fs-4.text-white(href='/DigitalAlbum/Form' style='background-color:rgba(155, 0, 0, 0.8);') Cadastrar Album
+    include components/projects
+    include components/team
+    dir.container-fluid.d-flex.align-items-center.justify-content-center
+      .row.text-center
+        .col
+          .row
+            .col
+              h1.display-6 Faça parte agora
+          .row
+            .col
+              h1.display-1 Cadastre o seu 
+                a.display-1.fw-bold.text-dark(href='/DigitalAlbum/Form') Album
+    include components/popup
+    include components/footer
